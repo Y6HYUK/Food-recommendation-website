@@ -2,8 +2,12 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>오늘 뭐 먹지?</title>
+    <title>뭐 먹을까?</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Google Fonts 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 추가 (아이콘 사용을 위함) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         function selectOption(category, value) {
             // 모든 버튼에서 'active' 클래스 제거
@@ -21,11 +25,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>오늘 뭐 먹지?</h1>
+        <h1>뭐 먹을까?</h1>
+        <p class="subtitle">인공지능이 사용자의 상태를 분석하여 최적의 음식을 추천해드립니다.</p>
         <form method="POST">
             <!-- 기분 선택 -->
             <div class="form-group">
-                <label>현재 기분은 어떠신가요?</label>
+                <label><i class="fas fa-smile"></i> 현재 기분은 어떠신가요?</label>
                 <div id="mood">
                     <button type="button" id="mood-기쁨" class="option-button" onclick="selectOption('mood', '기쁨')">기쁨</button>
                     <button type="button" id="mood-사랑" class="option-button" onclick="selectOption('mood', '사랑')">사랑</button>
@@ -43,7 +48,7 @@
 
             <!-- 날씨 선택 -->
             <div class="form-group">
-                <label>현재 날씨는 어떤가요?</label>
+                <label><i class="fas fa-cloud-sun"></i> 현재 날씨는 어떤가요?</label>
                 <div id="weather">
                     <button type="button" id="weather-맑음" class="option-button" onclick="selectOption('weather', '맑음')">맑음</button>
                     <button type="button" id="weather-흐림" class="option-button" onclick="selectOption('weather', '흐림')">흐림</button>
@@ -56,7 +61,7 @@
 
             <!-- 함께하는 사람 선택 -->
             <div class="form-group">
-                <label>함께하는 사람은 누구인가요?</label>
+                <label><i class="fas fa-user-friends"></i> 함께하는 사람은 누구인가요?</label>
                 <div id="company">
                     <button type="button" id="company-혼자" class="option-button" onclick="selectOption('company', '혼자')">혼자</button>
                     <button type="button" id="company-친구" class="option-button" onclick="selectOption('company', '친구')">친구</button>
@@ -70,7 +75,7 @@
 
             <!-- 식사 유형 선택 -->
             <div class="form-group">
-                <label>식사와 디저트 중 어떤 것을 원하시나요?</label>
+                <label><i class="fas fa-utensils"></i> 식사와 디저트 중 어떤 것을 원하시나요?</label>
                 <div id="meal_type">
                     <button type="button" id="meal_type-식사" class="option-button" onclick="selectOption('meal_type', '식사')">식사</button>
                     <button type="button" id="meal_type-디저트" class="option-button" onclick="selectOption('meal_type', '디저트')">디저트</button>
@@ -81,14 +86,13 @@
 
             <!-- 음식 종류 선택 -->
             <div class="form-group">
-                <label>음식 종류는 어떤 것을 원하시나요?</label>
+                <label><i class="fas fa-hamburger"></i> 음식 종류는 어떤 것을 원하시나요?</label>
                 <div id="cuisine">
                     <button type="button" id="cuisine-한식" class="option-button" onclick="selectOption('cuisine', '한식')">한식</button>
                     <button type="button" id="cuisine-일식" class="option-button" onclick="selectOption('cuisine', '일식')">일식</button>
                     <button type="button" id="cuisine-중식" class="option-button" onclick="selectOption('cuisine', '중식')">중식</button>
                     <button type="button" id="cuisine-양식" class="option-button" onclick="selectOption('cuisine', '양식')">양식</button>
                     <button type="button" id="cuisine-랜덤" class="option-button" onclick="selectOption('cuisine', '랜덤')">랜덤</button>
-                    <button type="button" id="cuisine-선택안함" class="option-button" onclick="selectOption('cuisine', '선택안함')">선택안함</button>
                 </div>
                 <input type="hidden" name="cuisine" id="input-cuisine" value="선택안함">
             </div>

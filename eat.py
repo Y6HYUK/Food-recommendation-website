@@ -39,23 +39,7 @@ def get_recommendation(mood, weather, company, meal_type, cuisine):
         '함께하는 사람': company if company and company != "선택안함" else None
     }
 
-    # 내러티브 생성을 위한 리스트 (현재 사용하지 않음)
-    selected_texts = []
-    for key, value in selected_conditions.items():
-        if value:
-            if key == '음식 종류':
-                selected_texts.append(f"{key}은(는) {value}을(를) 선택하셨습니다.")
-            elif key == '식사 유형':
-                selected_texts.append(f"{key}으로 {value}을(를) 선택하셨습니다.")
-            else:
-                selected_texts.append(f"오늘의 {key.lower()}는 {value}입니다.")
-
-    if selected_texts:
-        narrative = " ".join(selected_texts)
-    else:
-        narrative = "오늘의 상황에 맞는 음식을 추천해드릴게요."
-
-    # Scoring system: 각 음식이 몇 개의 조건을 만족하는지 계산
+    # 점수 기반 추천 로직
     scored_foods = []
     for food in food_data:
         score = 0
