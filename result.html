@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>음식 추천 결과</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+    // DOMContentLoaded 이후 실행
+    document.addEventListener("DOMContentLoaded", async function() {
+        // 1) URL 파라미터 파싱
+        const params = new URLSearchParams(window.location.search);
+        const mood = params.get('mood') || "선택안함";
+        const weather = params.get('weather') || "선택안함";
+        const company = params.get('company') || "선택안함";
+        const meal_type = params.get('meal_type') || "선택안함";
+        const cuisine = params.get('cuisine') || "선택안함";
+
+        // 2) 선택 목록 표시
+        const selectedConditions = {
+            "식사 유형": meal_type !== "선택안함" ? meal_type : null,
+            "음식 종류": cuisine !== "선택안함" ? cuisine : null,
+            "기분": mood !== "선택안함" ? mood : null,
+            "날씨": weather !== "선택안함" ? weather : null,
+            "함께하는 사람": company !== "선택안함" ? company : null
+        };
+
+        const selectionList = document.getElementById("selection-list");
+        for (const [key, value] of Object.entries(selectedConditions)) {
+            if (value) {
+                const li = document.createElement("li");
+                li.innerHTML = `<strong>${key}:</strong> ${value}`;
+                selectionList.appendChild(li);
+            }
+        }
+
+        // 3) 로딩 스피너 표시 후 로직 수행
+        const loadingTime = 2000; // 2초 스피너
+        setTimeout(async () => {
+            document.getElementById("loader").style.display = "none"; // 스피너 제거
+
+            // 4) food_data.json 로드
+            const response = await fetch('food_data.json');
+            const foodData = await response.json();
+
+            // 5) 점수 기반 추천 로직
+            const scoredFoods = [];
+            for (const food of foodData) {
+                let score = 0;
+                if (cuisine !== "선택안함" && food.cuisine === cuisine) score++;
+                if (meal_type !== "선택안함" && food.meal_type === meal_type) score++;
+                if (mood !== "선택안함" && food.suitable_mood.includes(mood)) score++;
+                if (weather !== "선택안함" && food.suitable_weather.includes(weather)) score++;
+                if (company !== "선택안함" && food.suitable_company.includes(company)) score++;
+                scoredFoods.push({ food, score });
+            }
+
+            let recommendation;
+            let reason = "";
+
+            if (scoredFoods.length > 0) {
+                const maxScore = Math.max(...scoredFoods.map(item => item.score));
+                if (maxScore > 0) {
+                    // 최대 점수 음식들만 추출
+                    const topFoods = scoredFoods.filter(item => item.score === maxScore).map(item => item.food);
+                    // 랜덤으로 하나 선택
+                    const selectedFood = topFoods[Math.floor(Math.random() * topFoods.length)];
+                    recommendation = selectedFood.name;
+                    reason = selectedFood.reason || "당신의 선택에 맞는 음식입니다.";
+                } else {
+                    // 조건에 맞는 음식이 없을 경우 대안
+                    recommendation = [];
+                    reason = "조건에 맞는 음식이 없어, 다음 중 하나를 선택해보세요.";
+                }
+            } else {
+                // 음식 데이터가 아예 없거나 오류
+                recommendation = [];
+                reason = "조건에 맞는 음식이 없어, 다음 중 하나를 선택해보세요.";
+            }
+
+            // 대안이 필요한 경우(=recommendation가 배열)이면 3~5개 음식을 무작위
+            if (Array.isArray(recommendation)) {
+                // 전체에서 3~5개 랜덤
+                const numRecommendations = Math.min(5, foodData.length);
+                const fallback = [];
+                while (fallback.length < numRecommendations) {
+                    const randFood = foodData[Math.floor(Math.random() * foodData.length)];
+                    if (!fallback.includes(randFood.name)) {
+                        fallback.push(randFood.name);
+                    }
+                }
+                recommendation = fallback;
+            }
+
+            // 6) 추천 결과 표시 (타이핑 효과)
+            showRecommendationResult(recommendation, reason);
+
+        }, loadingTime);
+    });
+
+    // 타이핑 함수
+    function typeText(element, text, speed = 30, callback = null) {
+        let idx = 0;
+        element.textContent = "";
+        const timer = setInterval(() => {
+            if (idx < text.length) {
+                element.textContent += text.charAt(idx);
+                idx++;
+            } else {
+                clearInterval(timer);
+                if (callback) callback();
+            }
+        }, speed);
+    }
+
+    function showRecommendationResult(recommendation, reason) {
+        const recommendationTextElem = document.getElementById("recommendation-text");
+        const reasonElem = document.getElementById("reason");
+        const loader = document.getElementById("loader");
+        loader.style.display = "none";
+
+        // 단일 추천 vs 대안
+        if (typeof recommendation === 'string') {
+            // 단일 추천 음식
+            const finalText = recommendation;
+            typeText(recommendationTextElem, finalText, 30, () => {
+                typeText(reasonElem, reason, 30);
+            });
+        } else {
+            // 대안 배열
+            typeText(recommendationTextElem, reason, 30, () => {
+                const listElem = document.getElementById("recommendation-list");
+                recommendation.forEach(food => {
+                    const li = document.createElement("li");
+                    li.textContent = food;
+                    listElem.appendChild(li);
+                });
+                document.getElementById("alternative-text").style.display = "block";
+                document.getElementById("alternative-container").style.display = "block";
+            });
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>음식 추천 결과</h1>
+
+        <!-- 선택 목록 텍스트 -->
+        <div id="selection-container">
+            <h2>선택 목록 <i class="fas fa-list"></i></h2>
+            <ul id="selection-list">
+                <!-- JavaScript가 파라미터를 파싱하여 채워넣습니다. -->
+            </ul>
+        </div>
+
+        <!-- 로딩 스피너 -->
+        <div id="loader" class="spinner"></div>
+
+        <!-- 추천 음식 (단일) -->
+        <div id="recommendation-container" class="recommendation-card">
+            <h2 class="recommendation-title">
+                <i class="fas fa-hamburger"></i> 추천 음식: 
+                <span id="recommendation-text"></span>
+            </h2>
+            <p id="reason" class="recommendation-reason" style="display: block;"></p>
+        </div>
+
+        <!-- 대안 음식 (조건에 맞지 않는 경우) -->
+        <div id="alternative-container" class="recommendation-card" style="display: none;">
+            <h2 id="alternative-text" class="recommendation-title" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+            </h2>
+            <ul id="recommendation-list" class="recommendation-list"></ul>
+            <p>위 음식들 중 하나를 선택해보세요!</p>
+        </div>
+
+        <a href="index.html" class="retry-button">다시 추천 받기 <i class="fas fa-redo"></i></a>
+    </div>
+</body>
+</html>
