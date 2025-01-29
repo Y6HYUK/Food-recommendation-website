@@ -52,7 +52,7 @@ label {
     font-size: 1.1em;
 }
 
-#weather, #mood, #company, #meal_type, #cuisine {
+#mood, #weather, #company, #meal_type, #cuisine {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
@@ -114,6 +114,40 @@ a {
 
 a:hover {
     color: #e55b50;
+}
+
+/* 내러티브 텍스트 스타일 */
+.narrative {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #555;
+}
+
+/* 로딩 스피너 스타일 */
+.spinner {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #ff6f61; /* Theme color */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 추천 음식 리스트 스타일 */
+#recommendation-list {
+    list-style-type: disc;
+    margin: 10px auto;
+    padding-left: 20px;
+    text-align: left;
+    max-width: 400px;
+    color: #555;
 }
 
 /* 반응형 디자인 */
