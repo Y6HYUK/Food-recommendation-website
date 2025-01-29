@@ -21,38 +21,34 @@ def index():
         cuisine = request.form.get('cuisine')
 
         # 추천 로직
-        recommendation, reason, narrative = get_recommendation(mood, weather, company, meal_type, cuisine)
+        recommendation, reason, selected_conditions = get_recommendation(mood, weather, company, meal_type, cuisine)
 
         return render_template('result.html',
                                recommendation=recommendation,
                                reason=reason,
-                               narrative=narrative)
+                               selected_conditions=selected_conditions)
     return render_template('index.html')
 
 def get_recommendation(mood, weather, company, meal_type, cuisine):
     # 선택된 조건들을 딕셔너리에 저장 (선택안함 제외)
     selected_conditions = {
-        'cuisine': cuisine if cuisine and cuisine != "선택안함" else None,
-        'meal_type': meal_type if meal_type and meal_type != "선택안함" else None,
-        'mood': mood if mood and mood != "선택안함" else None,
-        'weather': weather if weather and weather != "선택안함" else None,
-        'company': company if company and company != "선택안함" else None
+        '식사 유형': meal_type if meal_type and meal_type != "선택안함" else None,
+        '음식 종류': cuisine if cuisine and cuisine != "선택안함" else None,
+        '기분': mood if mood and mood != "선택안함" else None,
+        '날씨': weather if weather and weather != "선택안함" else None,
+        '함께하는 사람': company if company and company != "선택안함" else None
     }
 
-    # 내러티브 생성
+    # 내러티브 생성을 위한 리스트 (현재 사용하지 않음)
     selected_texts = []
     for key, value in selected_conditions.items():
         if value:
-            if key == 'cuisine':
-                selected_texts.append(f"음식 종류는 {value}을(를) 선택하셨습니다.")
-            elif key == 'meal_type':
-                selected_texts.append(f"식사 유형으로는 {value}을(를) 선택하셨습니다.")
-            elif key == 'mood':
-                selected_texts.append(f"오늘의 기분은 {value}이시군요.")
-            elif key == 'weather':
-                selected_texts.append(f"오늘 날씨는 {value}입니다.")
-            elif key == 'company':
-                selected_texts.append(f"함께하는 사람은 {value}이시군요.")
+            if key == '음식 종류':
+                selected_texts.append(f"{key}은(는) {value}을(를) 선택하셨습니다.")
+            elif key == '식사 유형':
+                selected_texts.append(f"{key}으로 {value}을(를) 선택하셨습니다.")
+            else:
+                selected_texts.append(f"오늘의 {key.lower()}는 {value}입니다.")
 
     if selected_texts:
         narrative = " ".join(selected_texts)
@@ -63,15 +59,15 @@ def get_recommendation(mood, weather, company, meal_type, cuisine):
     scored_foods = []
     for food in food_data:
         score = 0
-        if selected_conditions['cuisine'] and food.get('cuisine') == selected_conditions['cuisine']:
+        if selected_conditions['음식 종류'] and food.get('cuisine') == selected_conditions['음식 종류']:
             score += 1
-        if selected_conditions['meal_type'] and food.get('meal_type') == selected_conditions['meal_type']:
+        if selected_conditions['식사 유형'] and food.get('meal_type') == selected_conditions['식사 유형']:
             score += 1
-        if selected_conditions['mood'] and selected_conditions['mood'] in food.get('suitable_mood', []):
+        if selected_conditions['기분'] and selected_conditions['기분'] in food.get('suitable_mood', []):
             score += 1
-        if selected_conditions['weather'] and selected_conditions['weather'] in food.get('suitable_weather', []):
+        if selected_conditions['날씨'] and selected_conditions['날씨'] in food.get('suitable_weather', []):
             score += 1
-        if selected_conditions['company'] and selected_conditions['company'] in food.get('suitable_company', []):
+        if selected_conditions['함께하는 사람'] and selected_conditions['함께하는 사람'] in food.get('suitable_company', []):
             score += 1
         scored_foods.append((food, score))
 
@@ -92,13 +88,7 @@ def get_recommendation(mood, weather, company, meal_type, cuisine):
         recommendation = [food['name'] for food in fallback_recommendations]
         reason = "조건에 맞는 음식이 없어, 다음 중 하나를 선택해보세요."
 
-    # 추천 이유를 분석적인 문장으로 변환
-    if isinstance(recommendation, str):
-        reason = f"{reason}"
-    else:
-        reason = f"{reason}"
-
-    return recommendation, reason, narrative
+    return recommendation, reason, selected_conditions
 
 if __name__ == '__main__':
     app.run(debug=True)

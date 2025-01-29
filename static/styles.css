@@ -116,14 +116,6 @@ a:hover {
     color: #e55b50;
 }
 
-/* 내러티브 텍스트 스타일 */
-.narrative {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #555;
-}
-
 /* 로딩 스피너 스타일 */
 .spinner {
     border: 8px solid #f3f3f3; /* Light grey */
@@ -140,6 +132,28 @@ a:hover {
     100% { transform: rotate(360deg); }
 }
 
+/* 선택 목록 스타일 */
+#selection-container {
+    margin-bottom: 20px;
+}
+
+#selection-container h2 {
+    font-size: 1.5em;
+    color: #ff6f61;
+    margin-bottom: 10px;
+}
+
+#selection-list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+#selection-list li {
+    margin-bottom: 8px;
+}
+
 /* 추천 음식 리스트 스타일 */
 #recommendation-list {
     list-style-type: disc;
@@ -147,6 +161,22 @@ a:hover {
     padding-left: 20px;
     text-align: left;
     max-width: 400px;
+    color: #555;
+}
+
+/* 추천 결과 컨테이너 스타일 */
+#recommendation-container, #alternative-container {
+    margin-top: 20px;
+}
+
+#recommendation-container h2, #alternative-container h2 {
+    font-size: 1.8em;
+    color: #ff6f61;
+    margin-bottom: 10px;
+}
+
+#reason {
+    font-size: 1.1em;
     color: #555;
 }
 

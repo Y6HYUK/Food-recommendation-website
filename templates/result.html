@@ -9,13 +9,11 @@
             // 로딩 스피너 표시 시간 (밀리초 단위)
             const loadingTime = 2000; // 2초
 
-            // 내러티브와 추천 결과를 담을 요소
-            const narrativeElement = document.getElementById("narrative");
+            // 추천 결과를 담을 요소
             const recommendationElement = document.getElementById("recommendation");
             const reasonElement = document.getElementById("reason");
 
-            // 전체 내용을 숨김
-            narrativeElement.style.display = "none";
+            // 추천 결과 요소를 숨김
             recommendationElement.style.display = "none";
             reasonElement.style.display = "none";
 
@@ -39,28 +37,25 @@
             setTimeout(() => {
                 document.getElementById("loader").style.display = "none";
 
-                // 내러티브 타이핑
-                typeText(narrativeElement, "{{ narrative }}", 30, () => {
-                    // 추천 결과 타이핑
-                    {% if recommendation is string %}
-                        typeText(recommendationElement, "추천 음식: {{ recommendation }}", 30, () => {
-                            typeText(reasonElement, "{{ reason }}", 30);
+                // 추천 결과 타이핑
+                {% if recommendation is string %}
+                    typeText(recommendationElement, "추천 음식: {{ recommendation }}", 30, () => {
+                        typeText(reasonElement, "{{ reason }}", 30);
+                    });
+                {% else %}
+                    typeText(recommendationElement, "{{ reason }}", 30, () => {
+                        // 대안 음식 목록 표시
+                        const list = document.getElementById("recommendation-list");
+                        const foods = {{ recommendation | tojson }};
+                        foods.forEach(food => {
+                            const li = document.createElement("li");
+                            li.textContent = food;
+                            list.appendChild(li);
                         });
-                    {% else %}
-                        typeText(recommendationElement, "{{ reason }}", 30, () => {
-                            // 대안 음식 목록 표시
-                            const list = document.getElementById("recommendation-list");
-                            const foods = {{ recommendation | tojson }};
-                            foods.forEach(food => {
-                                const li = document.createElement("li");
-                                li.textContent = food;
-                                list.appendChild(li);
-                            });
-                            document.getElementById("recommendation").style.display = "block";
-                            document.getElementById("alternative-text").style.display = "block";
-                        });
-                    {% endif %}
-                });
+                        document.getElementById("alternative-text").style.display = "block";
+                        document.getElementById("alternative-container").style.display = "block";
+                    });
+                {% endif %}
             }, loadingTime);
         });
     </script>
@@ -69,11 +64,20 @@
     <div class="container">
         <h1>음식 추천 결과</h1>
 
+        <!-- 선택 목록 텍스트 -->
+        <div id="selection-container">
+            <h2>선택 목록</h2>
+            <ul id="selection-list">
+                {% for key, value in selected_conditions.items() %}
+                    {% if value %}
+                        <li><strong>{{ key }}:</strong> {{ value }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
         <!-- 로딩 스피너 -->
         <div id="loader" class="spinner"></div>
-
-        <!-- 내러티브 텍스트 -->
-        <p id="narrative" class="narrative"></p>
 
         <!-- 추천 음식 (조건에 맞는 경우) -->
         <div id="recommendation-container">
