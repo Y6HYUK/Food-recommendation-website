@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
 
 def load_food_data():
-    with open('/home/yjh/junhyuk_project/eat_web_ws/food_data.json', 'r', encoding='utf-8') as f:
+    with open('./food_data.json', 'r', encoding='utf-8') as f:
         return json.load(f)
 
 food_data = load_food_data()
