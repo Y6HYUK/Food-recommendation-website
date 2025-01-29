@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://y6hyuk.github.io/Food-recommendation-website/sitemap.xml
