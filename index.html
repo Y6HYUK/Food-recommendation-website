@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>오늘 뭐 먹지?</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <script>
+        // 선택된 옵션을 저장하는 객체
+        const selectedOptions = {
+            mood: "선택안함",
+            weather: "선택안함",
+            company: "선택안함",
+            meal_type: "선택안함",
+            cuisine: "선택안함"
+        };
+
+        // 옵션 선택 함수
+        function selectOption(category, value) {
+            // 모든 버튼에서 'active' 클래스 제거
+            const buttons = document.querySelectorAll(`#${category} .option-button`);
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // 클릭된 버튼에 'active' 클래스 추가
+            const button = document.getElementById(`${category}-${value}`);
+            button.classList.add('active');
+
+            // 선택된 값을 업데이트
+            selectedOptions[category] = value;
+        }
+
+        // 추천 받기 버튼 클릭 시 실행되는 함수
+        async function getRecommendation(event) {
+            event.preventDefault();
+
+            // food_data.json 파일 로드
+            const response = await fetch('food_data.json');
+            const foodData = await response.json();
+
+            // 선택된 옵션에 따라 필터링
+            let filteredFoods = foodData;
+
+            const selectedConditions = [];
+
+            if (selectedOptions.cuisine !== "선택안함") {
+                filteredFoods = filteredFoods.filter(food => food.cuisine === selectedOptions.cuisine);
+                selectedConditions.push(`오늘 음식 종류는 ${selectedOptions.cuisine}을(를) 선택하셨군요.`);
+            }
+
+            if (selectedOptions.meal_type !== "선택안함") {
+                filteredFoods = filteredFoods.filter(food => food.meal_type === selectedOptions.meal_type);
+                selectedConditions.push(`식사 유형은 ${selectedOptions.meal_type}을(를) 선택하셨습니다.`);
+            }
+
+            if (selectedOptions.mood !== "선택안함") {
+                filteredFoods = filteredFoods.filter(food => food.suitable_mood.includes(selectedOptions.mood));
+                selectedConditions.push(`오늘 기분은 ${selectedOptions.mood}하시군요.`);
+            }
+
+            if (selectedOptions.weather !== "선택안함") {
+                filteredFoods = filteredFoods.filter(food => food.suitable_weather.includes(selectedOptions.weather));
+                selectedConditions.push(`오늘 날씨는 ${selectedOptions.weather}입니다.`);
+            }
+
+            if (selectedOptions.company !== "선택안함") {
+                filteredFoods = filteredFoods.filter(food => food.suitable_company.includes(selectedOptions.company));
+                selectedConditions.push(`함께하는 사람은 ${selectedOptions.company}이시군요.`);
+            }
+
+            // 내러티브 생성
+            const narrative = selectedConditions.length > 0 ? selectedConditions.join(' ') : "오늘의 상황에 맞는 음식을 추천해드릴게요.";
+
+            let recommendation = "";
+            let reason = "";
+            if (filteredFoods.length > 0) {
+                const selectedFood = filteredFoods[Math.floor(Math.random() * filteredFoods.length)];
+                recommendation = selectedFood.name;
+                reason = selectedFood.reason;
+            } else {
+                // 조건에 맞는 음식이 없을 경우, 전체 음식 중 3~5개 랜덤 선택
+                const numRecommendations = Math.min(5, foodData.length);
+                const fallbackRecommendations = [];
+                while (fallbackRecommendations.length < numRecommendations) {
+                    const randomFood = foodData[Math.floor(Math.random() * foodData.length)];
+                    if (!fallbackRecommendations.includes(randomFood.name)) {
+                        fallbackRecommendations.push(randomFood.name);
+                    }
+                }
+                recommendation = fallbackRecommendations;
+                reason = "조건에 맞는 음식이 없어, 다음 중 하나를 선택해보세요.";
+            }
+
+            // 결과 표시
+            displayResult(narrative, recommendation, reason);
+        }
+
+        // 결과를 화면에 표시하는 함수
+        function displayResult(narrative, recommendation, reason) {
+            const resultSection = document.getElementById('result');
+            const narrativeElem = document.getElementById('narrative');
+            const recommendationElem = document.getElementById('recommendation');
+            const reasonElem = document.getElementById('reason');
+            const fallbackList = document.getElementById('fallback-list');
+
+            narrativeElem.innerText = narrative;
+
+            if (typeof recommendation === 'string') {
+                recommendationElem.innerText = recommendation;
+                reasonElem.innerText = reason;
+                fallbackList.style.display = 'none';
+                document.getElementById('single-recommendation').style.display = 'block';
+            } else if (Array.isArray(recommendation)) {
+                fallbackList.innerHTML = '';
+                recommendation.forEach(food => {
+                    const li = document.createElement('li');
+                    li.innerText = food;
+                    fallbackList.appendChild(li);
+                });
+                reasonElem.innerText = reason;
+                document.getElementById('single-recommendation').style.display = 'none';
+                fallbackList.style.display = 'block';
+            }
+
+            resultSection.style.display = 'block';
+            // 스크롤을 결과 섹션으로 이동
+            resultSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>오늘 뭐 먹지?</h1>
+        <form onsubmit="getRecommendation(event)">
+            <!-- 기분 선택 -->
+            <div class="form-group">
+                <label>현재 기분은 어떠신가요?</label>
+                <div id="mood">
+                    <button type="button" id="mood-기쁨" class="option-button" onclick="selectOption('mood', '기쁨')">기쁨</button>
+                    <button type="button" id="mood-사랑" class="option-button" onclick="selectOption('mood', '사랑')">사랑</button>
+                    <button type="button" id="mood-즐거움" class="option-button" onclick="selectOption('mood', '즐거움')">즐거움</button>
+                    <button type="button" id="mood-분노" class="option-button" onclick="selectOption('mood', '분노')">분노</button>
+                    <button type="button" id="mood-슬픔" class="option-button" onclick="selectOption('mood', '슬픔')">슬픔</button>
+                    <button type="button" id="mood-아픔" class="option-button" onclick="selectOption('mood', '아픔')">아픔</button>
+                    <button type="button" id="mood-불안" class="option-button" onclick="selectOption('mood', '불안')">불안</button>
+                    <button type="button" id="mood-피곤" class="option-button" onclick="selectOption('mood', '피곤')">피곤</button>
+                    <button type="button" id="mood-우울" class="option-button" onclick="selectOption('mood', '우울')">우울</button>
+                    <button type="button" id="mood-선택안함" class="option-button" onclick="selectOption('mood', '선택안함')">선택안함</button>
+                </div>
+            </div>
+
+            <!-- 날씨 선택 -->
+            <div class="form-group">
+                <label>현재 날씨는 어떤가요?</label>
+                <div id="weather">
+                    <button type="button" id="weather-맑음" class="option-button" onclick="selectOption('weather', '맑음')">맑음</button>
+                    <button type="button" id="weather-흐림" class="option-button" onclick="selectOption('weather', '흐림')">흐림</button>
+                    <button type="button" id="weather-비" class="option-button" onclick="selectOption('weather', '비')">비</button>
+                    <button type="button" id="weather-눈" class="option-button" onclick="selectOption('weather', '눈')">눈</button>
+                    <button type="button" id="weather-선택안함" class="option-button" onclick="selectOption('weather', '선택안함')">선택안함</button>
+                </div>
+            </div>
+
+            <!-- 함께하는 사람 선택 -->
+            <div class="form-group">
+                <label>함께하는 사람은 누구인가요?</label>
+                <div id="company">
+                    <button type="button" id="company-혼자" class="option-button" onclick="selectOption('company', '혼자')">혼자</button>
+                    <button type="button" id="company-친구" class="option-button" onclick="selectOption('company', '친구')">친구</button>
+                    <button type="button" id="company-가족" class="option-button" onclick="selectOption('company', '가족')">가족</button>
+                    <button type="button" id="company-회식" class="option-button" onclick="selectOption('company', '회식')">회식</button>
+                    <button type="button" id="company-데이트" class="option-button" onclick="selectOption('company', '데이트')">데이트</button>
+                    <button type="button" id="company-선택안함" class="option-button" onclick="selectOption('company', '선택안함')">선택안함</button>
+                </div>
+            </div>
+
+            <!-- 식사 유형 선택 -->
+            <div class="form-group">
+                <label>식사와 디저트 중 어떤 것을 원하시나요?</label>
+                <div id="meal_type">
+                    <button type="button" id="meal_type-식사" class="option-button" onclick="selectOption('meal_type', '식사')">식사</button>
+                    <button type="button" id="meal_type-디저트" class="option-button" onclick="selectOption('meal_type', '디저트')">디저트</button>
+                </div>
+            </div>
+
+            <!-- 음식 종류 선택 -->
+            <div class="form-group">
+                <label>음식 종류는 어떤 것을 원하시나요?</label>
+                <div id="cuisine">
+                    <button type="button" id="cuisine-한식" class="option-button" onclick="selectOption('cuisine', '한식')">한식</button>
+                    <button type="button" id="cuisine-일식" class="option-button" onclick="selectOption('cuisine', '일식')">일식</button>
+                    <button type="button" id="cuisine-중식" class="option-button" onclick="selectOption('cuisine', '중식')">중식</button>
+                    <button type="button" id="cuisine-양식" class="option-button" onclick="selectOption('cuisine', '양식')">양식</button>
+                    <button type="button" id="cuisine-랜덤" class="option-button" onclick="selectOption('cuisine', '랜덤')">랜덤</button>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">추천 받기</button>
+        </form>
+
+        <!-- 추천 결과 섹션 -->
+        <div id="result" style="display: none;">
+            <h2>음식 추천 결과</h2>
+            <p id="narrative" class="narrative"></p>
+
+            <div id="single-recommendation" style="display: none;">
+                <h3>추천 음식: <span id="recommendation"></span></h3>
+                <p id="reason"></p>
+            </div>
+
+            <div id="multiple-recommendations" style="display: none;">
+                <h3 id="reason"></h3>
+                <ul id="fallback-list"></ul>
+                <p>위 음식들 중 하나를 선택해보세요!</p>
+            </div>
+
+            <a href="#" onclick="window.location.reload();">다시 추천 받기</a>
+        </div>
+    </div>
+</body>
+</html>

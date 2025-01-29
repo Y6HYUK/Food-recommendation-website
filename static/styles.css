@@ -247,6 +247,32 @@ a:hover {
     justify-content: center; /* 버튼들을 중앙에 정렬 */
 }
 
+/* 내러티브 텍스트 스타일 */
+.narrative {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #555;
+}
+
+/* 추천 결과 섹션 스타일 */
+#result {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#fallback-list {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.single-recommendation, .multiple-recommendations {
+    display: none;
+}
+
 /* 반응형 디자인 */
 @media (max-width: 600px) {
     .container {
