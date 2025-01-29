@@ -1,0 +1,1011 @@
+[
+    {
+      "name": "비빔밥",
+      "cuisine": "한식",
+      "meal_type": "식사",
+      "suitable_mood": ["기쁨", "즐거움"],
+      "suitable_weather": ["맑음", "흐림"],
+      "suitable_company": ["혼자", "가족"],
+      "reason": "다양한 재료가 어우러져 활력을 북돋습니다."
+    },
+    {
+      "name": "초밥 세트",
+      "cuisine": "일식",
+      "meal_type": "식사",
+      "suitable_mood": ["사랑", "기쁨"],
+      "suitable_weather": ["맑음"],
+      "suitable_company": ["데이트", "친구"],
+      "reason": "정갈하고 신선하여 특별한 날에 잘 어울립니다."
+    },
+    {
+      "name": "짜장면",
+      "cuisine": "중식",
+      "meal_type": "식사",
+      "suitable_mood": ["피곤", "슬픔"],
+      "suitable_weather": ["흐림"],
+      "suitable_company": ["혼자", "가족"],
+      "reason": "달콤한 소스가 피곤한 날 위안을 줍니다."
+    },
+    {
+      "name": "스테이크 플레이트",
+      "cuisine": "양식",
+      "meal_type": "식사",
+      "suitable_mood": ["사랑", "분노"],
+      "suitable_weather": ["맑음", "흐림"],
+      "suitable_company": ["데이트", "회식"],
+      "reason": "고급스러운 육즙이 스트레스를 잠시 잊게 해줍니다."
+    },
+    {
+      "name": "랜덤 치즈버거",
+      "cuisine": "랜덤",
+      "meal_type": "식사",
+      "suitable_mood": ["즐거움", "기쁨"],
+      "suitable_weather": ["맑음"],
+      "suitable_company": ["친구", "회식"],
+      "reason": "버거의 풍부한 맛이 즐거운 기분을 배가시킵니다."
+    },
+    {
+      "name": "김치찌개",
+      "cuisine": "한식",
+      "meal_type": "식사",
+      "suitable_mood": ["분노", "우울"],
+      "suitable_weather": ["비", "흐림"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "얼큰함이 우울함과 화를 날려줍니다."
+    },
+    {
+      "name": "라멘",
+      "cuisine": "일식",
+      "meal_type": "식사",
+      "suitable_mood": ["피곤", "우울"],
+      "suitable_weather": ["눈", "비"],
+      "suitable_company": ["혼자", "가족"],
+      "reason": "뜨거운 국물이 지친 마음을 달래줍니다."
+    },
+    {
+      "name": "짬뽕",
+      "cuisine": "중식",
+      "meal_type": "식사",
+      "suitable_mood": ["분노", "피곤"],
+      "suitable_weather": ["비", "흐림"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "얼큰한 해물 국물이 기운을 북돋아줍니다."
+    },
+    {
+      "name": "크림 파스타",
+      "cuisine": "양식",
+      "meal_type": "식사",
+      "suitable_mood": ["불안", "슬픔"],
+      "suitable_weather": ["흐림"],
+      "suitable_company": ["혼자", "가족"],
+      "reason": "부드러운 크림이 불안을 잠재우고 마음을 편하게 해줍니다."
+    },
+    {
+      "name": "스파이시 닭가슴살 샐러드",
+      "cuisine": "랜덤",
+      "meal_type": "식사",
+      "suitable_mood": ["분노", "즐거움"],
+      "suitable_weather": ["맑음"],
+      "suitable_company": ["친구", "회식"],
+      "reason": "매콤함과 상큼함이 어우러져 기분 전환에 좋습니다."
+    },
+    {
+      "name": "불고기 덮밥",
+      "cuisine": "한식",
+      "meal_type": "식사",
+      "suitable_mood": ["사랑", "기쁨"],
+      "suitable_weather": ["맑음", "흐림"],
+      "suitable_company": ["가족", "데이트"],
+      "reason": "달콤짭조름한 맛이 사랑스러운 분위기를 더해줍니다."
+    },
+    {
+      "name": "가츠동",
+      "cuisine": "일식",
+      "meal_type": "식사",
+      "suitable_mood": ["아픔", "즐거움"],
+      "suitable_weather": ["맑음", "눈"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "부드러운 계란과 달콤한 소스가 아픔을 잊게 도와줍니다."
+    },
+    {
+      "name": "탕수육",
+      "cuisine": "중식",
+      "meal_type": "식사",
+      "suitable_mood": ["기쁨", "즐거움"],
+      "suitable_weather": ["맑음", "흐림"],
+      "suitable_company": ["회식", "친구"],
+      "reason": "바삭한 튀김 옷이 즐거운 날 파티 분위기를 고조시킵니다."
+    },
+    {
+      "name": "토마토 리조또",
+      "cuisine": "양식",
+      "meal_type": "식사",
+      "suitable_mood": ["슬픔", "우울"],
+      "suitable_weather": ["흐림", "비"],
+      "suitable_company": ["혼자", "가족"],
+      "reason": "부드러운 식감과 상큼함이 우울함을 덜어줍니다."
+    },
+    {
+      "name": "랜덤 멕시칸 랩",
+      "cuisine": "랜덤",
+      "meal_type": "식사",
+      "suitable_mood": ["기쁨", "피곤"],
+      "suitable_weather": ["맑음"],
+      "suitable_company": ["친구", "데이트"],
+      "reason": "다채로운 재료로 피곤함을 달래고 기분을 띄워줍니다."
+    },
+    {
+      "name": "김치볶음밥",
+      "cuisine": "한식",
+      "meal_type": "식사",
+      "suitable_mood": ["분노", "불안"],
+      "suitable_weather": ["비", "흐림"],
+      "suitable_company": ["혼자", "가족"],
+      "reason": "매콤한 풍미가 불안과 화를 달래줍니다."
+    },
+    {
+      "name": "카레우동",
+      "cuisine": "일식",
+      "meal_type": "식사",
+      "suitable_mood": ["우울", "슬픔"],
+      "suitable_weather": ["눈", "흐림"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "따뜻한 카레 국물이 우울한 마음을 달래줍니다."
+    },
+    {
+      "name": "마파두부",
+      "cuisine": "중식",
+      "meal_type": "식사",
+      "suitable_mood": ["분노", "피곤"],
+      "suitable_weather": ["비"],
+      "suitable_company": ["혼자", "회식"],
+      "reason": "얼큰하고 화끈한 맛으로 스트레스를 해소시켜줍니다."
+    },
+    {
+      "name": "알리오 올리오",
+      "cuisine": "양식",
+      "meal_type": "식사",
+      "suitable_mood": ["불안", "아픔"],
+      "suitable_weather": ["흐림", "비"],
+      "suitable_company": ["혼자", "가족"],
+      "reason": "담백한 오일 파스타가 속을 편하게 해줍니다."
+    },
+    {
+      "name": "랜덤 매콤 볶음면",
+      "cuisine": "랜덤",
+      "meal_type": "식사",
+      "suitable_mood": ["슬픔", "분노"],
+      "suitable_weather": ["맑음", "흐림"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "매운맛이 슬픔과 화를 날려줍니다."
+    },
+    {
+      "name": "갈비찜",
+      "cuisine": "한식",
+      "meal_type": "식사",
+      "suitable_mood": ["사랑", "즐거움"],
+      "suitable_weather": ["맑음"],
+      "suitable_company": ["가족", "데이트"],
+      "reason": "부드러운 갈비가 행복하고 사랑스러운 분위기를 만듭니다."
+    },
+    {
+      "name": "규동",
+      "cuisine": "일식",
+      "meal_type": "식사",
+      "suitable_mood": ["피곤", "기쁨"],
+      "suitable_weather": ["흐림", "눈"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "달콤 짭조름한 고기가 피로를 달래고 기쁨을 줍니다."
+    },
+    {
+      "name": "볶음짬뽕밥",
+      "cuisine": "중식",
+      "meal_type": "식사",
+      "suitable_mood": ["분노", "즐거움"],
+      "suitable_weather": ["비", "흐림"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "매콤한 해물볶음밥이 기분 전환에 좋습니다."
+    },
+    {
+      "name": "크림스프 파스타",
+      "cuisine": "양식",
+      "meal_type": "식사",
+      "suitable_mood": ["불안", "우울"],
+      "suitable_weather": ["흐림", "눈"],
+      "suitable_company": ["가족", "혼자"],
+      "reason": "부드러운 스프와 파스타의 조합이 마음을 편안히 해줍니다."
+    },
+    {
+      "name": "랜덤 라이스 샐러드볼",
+      "cuisine": "랜덤",
+      "meal_type": "식사",
+      "suitable_mood": ["슬픔", "피곤"],
+      "suitable_weather": ["맑음"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "가벼우면서도 든든해 슬픈 기분과 피곤함을 달래줍니다."
+    },
+    {
+      "name": "떡갈비",
+      "cuisine": "한식",
+      "meal_type": "식사",
+      "suitable_mood": ["사랑", "기쁨"],
+      "suitable_weather": ["맑음", "흐림"],
+      "suitable_company": ["가족", "데이트"],
+      "reason": "달콤한 양념이 사랑스럽고 기쁜 감정을 북돋습니다."
+    },
+    {
+      "name": "돈까스 정식",
+      "cuisine": "일식",
+      "meal_type": "식사",
+      "suitable_mood": ["분노", "우울"],
+      "suitable_weather": ["비", "흐림"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "바삭한 돈까스가 우울함과 화를 잠시 잊게 해줍니다."
+    },
+    {
+      "name": "짜장 볶음밥",
+      "cuisine": "중식",
+      "meal_type": "식사",
+      "suitable_mood": ["즐거움", "피곤"],
+      "reason": "달콤한 짜장 소스로 간편하게 에너지를 보충합니다.",
+      "suitable_weather": ["맑음", "흐림"],
+      "suitable_company": ["혼자", "가족"]
+    },
+    {
+      "name": "새우 오일 파스타",
+      "cuisine": "양식",
+      "meal_type": "식사",
+      "suitable_mood": ["사랑", "불안"],
+      "suitable_weather": ["맑음", "흐림"],
+      "suitable_company": ["데이트", "친구"],
+      "reason": "가벼운 오일 파스타가 불안감을 덜고 사랑스러운 분위기를 만듭니다."
+    },
+    {
+      "name": "랜덤 치킨 플레이트",
+      "cuisine": "랜덤",
+      "meal_type": "식사",
+      "suitable_mood": ["기쁨", "즐거움"],
+      "suitable_weather": ["맑음"],
+      "suitable_company": ["회식", "친구"],
+      "reason": "바삭하고 풍성한 치킨이 즐거운 분위기를 더해줍니다."
+    },
+    {
+      "name": "삼계탕",
+      "cuisine": "한식",
+      "meal_type": "식사",
+      "suitable_mood": ["아픔", "피곤"],
+      "suitable_weather": ["비", "흐림"],
+      "suitable_company": ["가족", "혼자"],
+      "reason": "영양가 높은 국물이 아픈 몸과 피로를 풀어줍니다."
+    },
+    {
+      "name": "우동카츠",
+      "cuisine": "일식",
+      "meal_type": "식사",
+      "suitable_mood": ["분노", "아픔"],
+      "suitable_weather": ["비", "눈"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "따뜻한 우동 국물과 바삭한 돈카츠로 분노와 아픔을 잠시 잊게 해줍니다."
+    },
+    {
+      "name": "해물볶음면",
+      "cuisine": "중식",
+      "meal_type": "식사",
+      "suitable_mood": ["분노", "즐거움"],
+      "suitable_weather": ["맑음", "흐림"],
+      "suitable_company": ["혼자", "회식"],
+      "reason": "매콤한 해물이 기분 전환에 좋습니다."
+    },
+    {
+      "name": "볼로네즈 스파게티",
+      "cuisine": "양식",
+      "meal_type": "식사",
+      "suitable_mood": ["슬픔", "우울"],
+      "suitable_weather": ["비", "흐림"],
+      "suitable_company": ["혼자", "가족"],
+      "reason": "진한 토마토 소스가 우울함을 덜어줍니다."
+    },
+    {
+      "name": "랜덤 프라이드 라이스",
+      "cuisine": "랜덤",
+      "meal_type": "식사",
+      "suitable_mood": ["기쁨", "피곤"],
+      "suitable_weather": ["맑음"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "손쉽게 즐길 수 있어 피곤함을 덜고 기쁨을 줍니다."
+    },
+    {
+      "name": "김밥",
+      "cuisine": "한식",
+      "meal_type": "식사",
+      "suitable_mood": ["즐거움", "사랑"],
+      "suitable_weather": ["맑음"],
+      "suitable_company": ["가족", "친구"],
+      "reason": "간편하고 정감 있어 즐겁고 따뜻한 감정을 배가합니다."
+    },
+    {
+      "name": "규카츠",
+      "cuisine": "일식",
+      "meal_type": "식사",
+      "suitable_mood": ["분노", "불안"],
+      "suitable_weather": ["흐림"],
+      "suitable_company": ["데이트", "친구"],
+      "reason": "겉바속촉한 식감이 화와 불안을 누그러뜨려줍니다."
+    },
+    {
+      "name": "유린기",
+      "cuisine": "중식",
+      "meal_type": "식사",
+      "suitable_mood": ["기쁨", "즐거움"],
+      "suitable_weather": ["맑음", "눈"],
+      "suitable_company": ["회식", "친구"],
+      "reason": "새콤달콤 소스가 기분 좋은 날에 활력을 더합니다."
+    },
+    {
+      "name": "버섯 크림 파스타",
+      "cuisine": "양식",
+      "meal_type": "식사",
+      "suitable_mood": ["우울", "불안"],
+      "suitable_weather": ["비"],
+      "suitable_company": ["혼자", "가족"],
+      "reason": "부드러운 버섯과 크림이 마음을 안정시켜줍니다."
+    },
+    {
+      "name": "랜덤 케밥",
+      "cuisine": "랜덤",
+      "meal_type": "식사",
+      "suitable_mood": ["분노", "슬픔"],
+      "suitable_weather": ["맑음", "흐림"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "이국적인 향신료가 마음을 전환시키는 데 도움이 됩니다."
+    },
+    {
+      "name": "삼합(삼겹+김치+굴)",
+      "cuisine": "한식",
+      "meal_type": "식사",
+      "suitable_mood": ["사랑", "즐거움"],
+      "suitable_weather": ["맑음"],
+      "suitable_company": ["가족", "회식"],
+      "reason": "풍부한 맛의 조화가 즐겁고 사랑스러운 분위기를 만듭니다."
+    },
+    {
+      "name": "가라아게 정식",
+      "cuisine": "일식",
+      "meal_type": "식사",
+      "suitable_mood": ["피곤", "아픔"],
+      "suitable_weather": ["흐림", "비"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "바삭한 닭튀김이 간단히 에너지를 보충해줍니다."
+    },
+    {
+      "name": "마라샹궈",
+      "cuisine": "중식",
+      "meal_type": "식사",
+      "suitable_mood": ["분노", "기쁨"],
+      "suitable_weather": ["비", "흐림"],
+      "suitable_company": ["회식", "친구"],
+      "reason": "화끈한 매운맛이 스트레스도 날리고 즐거움을 더합니다."
+    },
+    {
+      "name": "까르보나라",
+      "cuisine": "양식",
+      "meal_type": "식사",
+      "suitable_mood": ["피곤", "불안"],
+      "suitable_weather": ["눈", "흐림"],
+      "suitable_company": ["혼자", "데이트"],
+      "reason": "부드러운 베이컨 소스가 몸과 마음을 편하게 해줍니다."
+    },
+    {
+      "name": "랜덤 커리 라이스",
+      "cuisine": "랜덤",
+      "meal_type": "식사",
+      "suitable_mood": ["우울", "슬픔"],
+      "suitable_weather": ["비", "흐림"],
+      "suitable_company": ["혼자", "가족"],
+      "reason": "진한 커리가 우울함을 덜어주고 속을 채워줍니다."
+    },
+    {
+      "name": "치즈 케이크",
+      "cuisine": "양식",
+      "meal_type": "디저트",
+      "suitable_mood": ["사랑", "기쁨"],
+      "suitable_weather": ["맑음", "흐림"],
+      "suitable_company": ["데이트", "친구"],
+      "reason": "부드럽고 달콤하여 사랑과 기쁨을 배가시킵니다."
+    },
+    {
+      "name": "녹차 아이스크림",
+      "cuisine": "랜덤",
+      "meal_type": "디저트",
+      "suitable_mood": ["불안", "분노"],
+      "suitable_weather": ["맑음", "비"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "은은한 녹차 향이 불안과 화를 누그러뜨립니다."
+    },
+    {
+      "name": "팥빙수",
+      "cuisine": "한식",
+      "meal_type": "디저트",
+      "suitable_mood": ["슬픔", "피곤"],
+      "suitable_weather": ["맑음", "흐림"],
+      "suitable_company": ["가족", "친구"],
+      "reason": "차가운 단맛이 슬픈 기분과 피로를 달래줍니다."
+    },
+    {
+      "name": "녹차 롤케이크",
+      "cuisine": "일식",
+      "meal_type": "디저트",
+      "suitable_mood": ["우울", "아픔"],
+      "suitable_weather": ["흐림"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "부드러운 녹차 크림이 우울함과 아픔을 완화시킵니다."
+    },
+    {
+      "name": "망고 셔벗",
+      "cuisine": "중식",
+      "meal_type": "디저트",
+      "suitable_mood": ["기쁨", "즐거움"],
+      "suitable_weather": ["맑음"],
+      "suitable_company": ["친구", "데이트"],
+      "reason": "시원하고 달콤해 즐거운 기분을 더 살려줍니다."
+    },
+    {
+      "name": "초콜릿 브라우니",
+      "cuisine": "양식",
+      "meal_type": "디저트",
+      "suitable_mood": ["분노", "우울"],
+      "suitable_weather": ["비", "흐림"],
+      "suitable_company": ["혼자", "가족"],
+      "reason": "진한 초콜릿이 스트레스와 우울감을 잠시 잊게 해줍니다."
+    },
+    {
+      "name": "랜덤 쿠키 세트",
+      "cuisine": "랜덤",
+      "meal_type": "디저트",
+      "suitable_mood": ["불안", "슬픔"],
+      "suitable_weather": ["흐림", "눈"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "다양한 쿠키로 작은 즐거움을 얻을 수 있습니다."
+    },
+    {
+      "name": "호두 파이",
+      "cuisine": "한식",
+      "meal_type": "디저트",
+      "suitable_mood": ["사랑", "피곤"],
+      "suitable_weather": ["맑음", "흐림"],
+      "suitable_company": ["가족", "데이트"],
+      "reason": "고소한 호두가 피로를 풀어주고 따뜻한 분위기를 만듭니다."
+    },
+    {
+      "name": "와라비 모찌",
+      "cuisine": "일식",
+      "meal_type": "디저트",
+      "suitable_mood": ["아픔", "불안"],
+      "suitable_weather": ["비", "흐림"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "말랑한 식감과 담백한 단맛이 마음을 진정시켜줍니다."
+    },
+    {
+      "name": "사과 타르트",
+      "cuisine": "중식",
+      "meal_type": "디저트",
+      "suitable_mood": ["슬픔", "우울"],
+      "suitable_weather": ["흐림", "눈"],
+      "suitable_company": ["혼자", "가족"],
+      "reason": "달콤한 사과 필링이 우울한 기분을 달콤하게 바꿔줍니다."
+    },
+    {
+      "name": "뉴욕 치즈케이크",
+      "cuisine": "양식",
+      "meal_type": "디저트",
+      "suitable_mood": ["분노", "기쁨"],
+      "suitable_weather": ["맑음", "비"],
+      "suitable_company": ["혼자", "데이트"],
+      "reason": "진한 치즈 풍미가 분노를 누그러뜨리고 기쁨을 높여줍니다."
+    },
+    {
+      "name": "랜덤 컵케이크",
+      "cuisine": "랜덤",
+      "meal_type": "디저트",
+      "suitable_mood": ["즐거움", "사랑"],
+      "suitable_weather": ["맑음"],
+      "suitable_company": ["친구", "회식"],
+      "reason": "알록달록 디자인이 즐겁고 사랑스러운 분위기를 완성합니다."
+    },
+    {
+      "name": "꿀떡",
+      "cuisine": "한식",
+      "meal_type": "디저트",
+      "suitable_mood": ["우울", "피곤"],
+      "suitable_weather": ["흐림"],
+      "suitable_company": ["혼자", "가족"],
+      "reason": "쫀득한 달콤함이 우울함과 피곤함을 잠시 잊게 해줍니다."
+    },
+    {
+      "name": "녹차 양갱",
+      "cuisine": "일식",
+      "meal_type": "디저트",
+      "suitable_mood": ["아픔", "불안"],
+      "suitable_weather": ["비", "흐림"],
+      "suitable_company": ["혼자", "친구"],
+      "reason": "부드러운 단맛과 녹차 향이 마음을 편하게 합니다."
+    },
+    {
+      "name": "홍콩 에그타르트",
+      "cuisine": "중식",
+      "meal_type": "디저트",
+      "suitable_mood": ["기쁨", "슬픔"],
+      "suitable_weather": ["맑음", "흐림"],
+      "suitable_company": ["친구", "회식"],
+      "reason": "바삭한 페이스트리와 달콤한 커스터드가 기쁨과 슬픔을 함께 녹여줍니다."
+    },
+    {
+      "name": "티라미수",
+      "cuisine": "양식",
+      "meal_type": "디저트",
+      "suitable_mood": ["사랑", "우울"],
+      "suitable_weather": ["비", "흐림"],
+      "suitable_company": ["데이트", "혼자"],
+      "reason": "커피와 치즈의 조화가 우울함을 달래고 로맨틱한 기분을 살려줍니다."
+    },
+    {
+      "name": "랜덤 도넛",
+      "cuisine": "랜덤",
+      "meal_type": "디저트",
+      "suitable_mood": ["기쁨", "즐거움"],
+      "suitable_weather": ["맑음"],
+      "suitable_company": ["친구", "가족"],
+      "reason": "달콤한 도넛으로 즐거운 시간을 보낼 수 있습니다."
+    },
+    {
+        "name": "보쌈",
+        "cuisine": "한식",
+        "meal_type": "식사",
+        "suitable_mood": ["기쁨", "우울"],
+        "suitable_weather": ["흐림"],
+        "suitable_company": ["가족", "친구"],
+        "reason": "담백한 수육과 아삭한 김치가 우울함을 잊게 해줍니다."
+      },
+      {
+        "name": "어묵탕",
+        "cuisine": "한식",
+        "meal_type": "식사",
+        "suitable_mood": ["피곤", "분노"],
+        "suitable_weather": ["비", "흐림"],
+        "suitable_company": ["혼자", "회식"],
+        "reason": "따뜻한 국물이 화와 피로를 녹여줍니다."
+      },
+      {
+        "name": "까르보 떡볶이",
+        "cuisine": "한식",
+        "meal_type": "식사",
+        "suitable_mood": ["슬픔", "즐거움"],
+        "suitable_weather": ["맑음", "흐림"],
+        "suitable_company": ["친구", "가족"],
+        "reason": "부드러운 크림이 슬픔을 덜고 즐거운 분위기를 만듭니다."
+      },
+      {
+        "name": "카츠카레",
+        "cuisine": "일식",
+        "meal_type": "식사",
+        "suitable_mood": ["피곤", "기쁨"],
+        "suitable_weather": ["비", "눈"],
+        "suitable_company": ["혼자", "친구"],
+        "reason": "바삭한 돈카츠와 카레가 피곤함을 달래줍니다."
+      },
+      {
+        "name": "탄탄면",
+        "cuisine": "중식",
+        "meal_type": "식사",
+        "suitable_mood": ["분노", "우울"],
+        "suitable_weather": ["흐림", "비"],
+        "suitable_company": ["혼자", "회식"],
+        "reason": "얼큰하고 고소한 맛이 우울과 화를 함께 날려줍니다."
+      },
+      {
+        "name": "연어 스테이크",
+        "cuisine": "양식",
+        "meal_type": "식사",
+        "suitable_mood": ["사랑", "불안"],
+        "suitable_weather": ["맑음", "흐림"],
+        "suitable_company": ["데이트", "가족"],
+        "reason": "신선한 연어가 불안을 덜고 사랑스러운 식사를 완성합니다."
+      },
+      {
+        "name": "랜덤 퀘사디아",
+        "cuisine": "랜덤",
+        "meal_type": "식사",
+        "suitable_mood": ["기쁨", "분노"],
+        "suitable_weather": ["맑음"],
+        "suitable_company": ["친구", "회식"],
+        "reason": "고소한 치즈가 분노를 잠재우고 기쁨을 높여줍니다."
+      },
+      {
+        "name": "콩나물 국밥",
+        "cuisine": "한식",
+        "meal_type": "식사",
+        "suitable_mood": ["아픔", "슬픔"],
+        "suitable_weather": ["비", "흐림"],
+        "suitable_company": ["혼자", "가족"],
+        "reason": "시원한 국물이 아픈 몸과 슬픈 마음을 달래줍니다."
+      },
+      {
+        "name": "규카츠 샌드",
+        "cuisine": "일식",
+        "meal_type": "식사",
+        "suitable_mood": ["즐거움", "피곤"],
+        "suitable_weather": ["맑음"],
+        "suitable_company": ["친구", "회식"],
+        "reason": "바삭한 규카츠를 샌드위치로 즐겨 에너지를 보충합니다."
+      },
+      {
+        "name": "마라탕면",
+        "cuisine": "중식",
+        "meal_type": "식사",
+        "suitable_mood": ["분노", "불안"],
+        "suitable_weather": ["비", "흐림"],
+        "suitable_company": ["혼자", "친구"],
+        "reason": "매운 국물이 스트레스와 불안을 씻어냅니다."
+      },
+      {
+        "name": "버섯 크림 리소토",
+        "cuisine": "양식",
+        "meal_type": "식사",
+        "suitable_mood": ["우울", "아픔"],
+        "suitable_weather": ["눈", "흐림"],
+        "suitable_company": ["혼자", "가족"],
+        "reason": "부드러운 식감이 우울하고 아픈 마음을 위로합니다."
+      },
+      {
+        "name": "랜덤 또띠아 피자",
+        "cuisine": "랜덤",
+        "meal_type": "식사",
+        "suitable_mood": ["기쁨", "즐거움"],
+        "suitable_weather": ["맑음"],
+        "suitable_company": ["친구", "회식"],
+        "reason": "가벼운 또띠아와 토핑이 즐거움을 배가합니다."
+      },
+      {
+        "name": "제육덮밥",
+        "cuisine": "한식",
+        "meal_type": "식사",
+        "suitable_mood": ["분노", "피곤"],
+        "suitable_weather": ["흐림", "비"],
+        "suitable_company": ["혼자", "가족"],
+        "reason": "매콤한 양념이 화와 피로를 해소해줍니다."
+      },
+      {
+        "name": "규동 오므라이스",
+        "cuisine": "일식",
+        "meal_type": "식사",
+        "suitable_mood": ["사랑", "우울"],
+        "suitable_weather": ["눈", "흐림"],
+        "suitable_company": ["데이트", "친구"],
+        "reason": "부드러운 달걀과 고기가 우울함을 달래줍니다."
+      },
+      {
+        "name": "마파 가지",
+        "cuisine": "중식",
+        "meal_type": "식사",
+        "suitable_mood": ["슬픔", "즐거움"],
+        "suitable_weather": ["흐림"],
+        "suitable_company": ["혼자", "가족"],
+        "reason": "부드러운 가지와 매콤한 소스가 슬픔을 잊게 해줍니다."
+      },
+      {
+        "name": "바질 페스토 파스타",
+        "cuisine": "양식",
+        "meal_type": "식사",
+        "suitable_mood": ["사랑", "불안"],
+        "suitable_weather": ["맑음", "흐림"],
+        "suitable_company": ["데이트", "친구"],
+        "reason": "상쾌한 바질 향이 불안을 덜고 사랑스러운 분위기를 높여줍니다."
+      },
+      {
+        "name": "랜덤 파니니",
+        "cuisine": "랜덤",
+        "meal_type": "식사",
+        "suitable_mood": ["기쁨", "불안"],
+        "suitable_weather": ["맑음"],
+        "suitable_company": ["혼자", "친구"],
+        "reason": "간단하면서도 맛있어 기쁨을 유지하고 불안을 덜어줍니다."
+      },
+      {
+        "name": "곱창전골",
+        "cuisine": "한식",
+        "meal_type": "식사",
+        "suitable_mood": ["분노", "즐거움"],
+        "suitable_weather": ["비", "흐림"],
+        "suitable_company": ["회식", "친구"],
+        "reason": "얼큰한 전골이 화끈한 기분 전환에 제격입니다."
+      },
+      {
+        "name": "오야코동",
+        "cuisine": "일식",
+        "meal_type": "식사",
+        "suitable_mood": ["우울", "피곤"],
+        "suitable_weather": ["눈", "흐림"],
+        "suitable_company": ["혼자", "가족"],
+        "reason": "달달한 계란과 닭고기가 우울함과 피곤함을 달래줍니다."
+      },
+      {
+        "name": "가지 볶음면",
+        "cuisine": "중식",
+        "meal_type": "식사",
+        "suitable_mood": ["슬픔", "아픔"],
+        "suitable_weather": ["비", "흐림"],
+        "suitable_company": ["혼자", "친구"],
+        "reason": "부드러운 가지와 면이 속을 편하게 하여 슬픔과 아픔을 달랩니다."
+      },
+      {
+        "name": "토마토 소스 미트볼",
+        "cuisine": "양식",
+        "meal_type": "식사",
+        "suitable_mood": ["불안", "우울"],
+        "suitable_weather": ["흐림", "비"],
+        "suitable_company": ["가족", "데이트"],
+        "reason": "달콤한 토마토 소스가 우울하고 불안한 마음을 달래줍니다."
+      },
+      {
+        "name": "랜덤 포케볼",
+        "cuisine": "랜덤",
+        "meal_type": "식사",
+        "suitable_mood": ["기쁨", "사랑"],
+        "suitable_weather": ["맑음", "흐림"],
+        "suitable_company": ["친구", "데이트"],
+        "reason": "신선한 재료가 기쁨과 사랑을 더해주는 상큼함을 선사합니다."
+      },
+      {
+        "name": "뼈해장국",
+        "cuisine": "한식",
+        "meal_type": "식사",
+        "suitable_mood": ["분노", "피곤"],
+        "suitable_weather": ["비", "흐림"],
+        "suitable_company": ["회식", "가족"],
+        "reason": "얼큰한 국물이 피곤과 스트레스를 해소해줍니다."
+      },
+      {
+        "name": "가라아게 카레",
+        "cuisine": "일식",
+        "meal_type": "식사",
+        "suitable_mood": ["기쁨", "피곤"],
+        "suitable_weather": ["눈", "흐림"],
+        "suitable_company": ["혼자", "친구"],
+        "reason": "바삭한 닭튀김과 카레가 맛있게 피곤함을 덜어줍니다."
+      },
+      {
+        "name": "덴푸라 우동",
+        "cuisine": "일식",
+        "meal_type": "식사",
+        "suitable_mood": ["아픔", "우울"],
+        "suitable_weather": ["비", "흐림"],
+        "suitable_company": ["혼자", "가족"],
+        "reason": "바삭한 덴푸라와 따뜻한 우동 국물이 우울함과 아픔을 달래줍니다."
+      },
+      {
+        "name": "볶음 짜장라면",
+        "cuisine": "중식",
+        "meal_type": "식사",
+        "suitable_mood": ["슬픔", "즐거움"],
+        "suitable_weather": ["맑음", "흐림"],
+        "suitable_company": ["혼자", "친구"],
+        "reason": "달콤한 짜장 향이 슬픈 기분을 달래고 즐거움을 더해줍니다."
+      },
+      {
+        "name": "어니언 수프 스테이크",
+        "cuisine": "양식",
+        "meal_type": "식사",
+        "suitable_mood": ["불안", "사랑"],
+        "suitable_weather": ["맑음", "흐림"],
+        "suitable_company": ["데이트", "회식"],
+        "reason": "달콤한 양파 수프와 고기의 조화가 사랑스러운 분위기를 만듭니다."
+      },
+      {
+        "name": "랜덤 비빔국수",
+        "cuisine": "랜덤",
+        "meal_type": "식사",
+        "suitable_mood": ["분노", "피곤"],
+        "suitable_weather": ["맑음"],
+        "suitable_company": ["혼자", "친구"],
+        "reason": "매콤새콤한 국수가 분노와 피곤을 풀어줍니다."
+      },
+      {
+        "name": "매운 닭갈비",
+        "cuisine": "한식",
+        "meal_type": "식사",
+        "suitable_mood": ["분노", "기쁨"],
+        "suitable_weather": ["비", "흐림"],
+        "suitable_company": ["친구", "가족"],
+        "reason": "화끈한 닭갈비가 화와 기쁨을 함께 폭발시킵니다."
+      },
+      {
+        "name": "규탄동",
+        "cuisine": "일식",
+        "meal_type": "식사",
+        "suitable_mood": ["우울", "슬픔"],
+        "suitable_weather": ["눈", "흐림"],
+        "suitable_company": ["혼자", "가족"],
+        "reason": "부드러운 소고기와 계란 조합이 우울과 슬픔을 달래줍니다."
+      },
+      {
+        "name": "깐풍 새우",
+        "cuisine": "중식",
+        "meal_type": "식사",
+        "suitable_mood": ["기쁨", "즐거움"],
+        "suitable_weather": ["맑음", "비"],
+        "suitable_company": ["회식", "친구"],
+        "reason": "매콤달콤한 새우가 즐거운 분위기를 더해줍니다."
+      },
+      {
+        "name": "살몬 시저 샐러드",
+        "cuisine": "양식",
+        "meal_type": "식사",
+        "suitable_mood": ["사랑", "불안"],
+        "suitable_weather": ["흐림", "비"],
+        "suitable_company": ["데이트", "가족"],
+        "reason": "고소한 연어와 상큼한 드레싱이 사랑과 안정을 돕습니다."
+      },
+      {
+        "name": "랜덤 포테이토 피자",
+        "cuisine": "랜덤",
+        "meal_type": "식사",
+        "suitable_mood": ["피곤", "분노"],
+        "suitable_weather": ["맑음", "흐림"],
+        "suitable_company": ["친구", "회식"],
+        "reason": "탄수화물의 든든함으로 피곤과 스트레스를 날려줍니다."
+      },
+      {
+        "name": "해물 순두부찌개",
+        "cuisine": "한식",
+        "meal_type": "식사",
+        "suitable_mood": ["아픔", "우울"],
+        "suitable_weather": ["비", "흐림"],
+        "suitable_company": ["혼자", "가족"],
+        "reason": "부드러운 순두부와 시원한 해물이 우울함과 아픔을 달래줍니다."
+      },
+      {
+        "name": "가츠산도",
+        "cuisine": "일식",
+        "meal_type": "식사",
+        "suitable_mood": ["슬픔", "즐거움"],
+        "suitable_weather": ["맑음"],
+        "suitable_company": ["친구", "혼자"],
+        "reason": "바삭한 돈카츠와 달콤 소스가 슬픔을 잊게 해줍니다."
+      },
+      {
+        "name": "사천 가지볶음",
+        "cuisine": "중식",
+        "meal_type": "식사",
+        "suitable_mood": ["분노", "사랑"],
+        "suitable_weather": ["흐림", "비"],
+        "suitable_company": ["회식", "데이트"],
+        "reason": "살짝 매콤한 가지볶음이 화를 풀고 로맨틱한 분위기를 자아냅니다."
+      },
+      {
+        "name": "페스토 라비올리",
+        "cuisine": "양식",
+        "meal_type": "식사",
+        "suitable_mood": ["불안", "사랑"],
+        "suitable_weather": ["맑음", "흐림"],
+        "suitable_company": ["데이트", "친구"],
+        "reason": "부드러운 라비올리에 향긋한 페스토가 사랑을 고조시킵니다."
+      },
+      {
+        "name": "랜덤 브리또",
+        "cuisine": "랜덤",
+        "meal_type": "식사",
+        "suitable_mood": ["기쁨", "아픔"],
+        "suitable_weather": ["맑음", "흐림"],
+        "suitable_company": ["혼자", "친구"],
+        "reason": "다양한 속재료로 든든한 한 끼가 되어 기쁨을 주고 아픔을 덜어줍니다."
+      },
+      {
+        "name": "만둣국",
+        "cuisine": "한식",
+        "meal_type": "식사",
+        "suitable_mood": ["슬픔", "불안"],
+        "suitable_weather": ["비", "흐림"],
+        "suitable_company": ["가족", "혼자"],
+        "reason": "따뜻한 국물이 슬픔과 불안을 달래줍니다."
+      },
+      {
+        "name": "온센 타마고 덮밥",
+        "cuisine": "일식",
+        "meal_type": "식사",
+        "suitable_mood": ["우울", "피곤"],
+        "suitable_weather": ["눈", "흐림"],
+        "suitable_company": ["혼자", "친구"],
+        "reason": "부드러운 반숙 달걀이 우울함과 피곤함을 풀어줍니다."
+      },
+      {
+        "name": "새콤 달콤 탕수육",
+        "cuisine": "중식",
+        "meal_type": "식사",
+        "suitable_mood": ["기쁨", "즐거움"],
+        "suitable_weather": ["맑음"],
+        "suitable_company": ["친구", "회식"],
+        "reason": "새콤달콤 소스가 즐거운 감정을 더욱 높여줍니다."
+      },
+      {
+        "name": "에그 베네딕트",
+        "cuisine": "양식",
+        "meal_type": "식사",
+        "suitable_mood": ["사랑", "즐거움"],
+        "suitable_weather": ["맑음", "흐림"],
+        "suitable_company": ["데이트", "친구"],
+        "reason": "달콤하고 부드러운 소스가 로맨틱하고 즐거운 분위기를 만듭니다."
+      },
+      {
+        "name": "랜덤 미트 스튜",
+        "cuisine": "랜덤",
+        "meal_type": "식사",
+        "suitable_mood": ["분노", "우울"],
+        "suitable_weather": ["비", "흐림"],
+        "suitable_company": ["혼자", "가족"],
+        "reason": "진한 육즙의 스튜가 화와 우울함을 녹여줍니다."
+      },
+      {
+        "name": "알밥",
+        "cuisine": "한식",
+        "meal_type": "식사",
+        "suitable_mood": ["기쁨", "불안"],
+        "suitable_weather": ["맑음", "흐림"],
+        "suitable_company": ["친구", "혼자"],
+        "reason": "톡톡 터지는 날치알이 기쁨을 더하고 불안을 덜어줍니다."
+      },
+      {
+        "name": "규카츠 버거",
+        "cuisine": "일식",
+        "meal_type": "식사",
+        "suitable_mood": ["사랑", "슬픔"],
+        "suitable_weather": ["흐림", "눈"],
+        "suitable_company": ["데이트", "친구"],
+        "reason": "바삭한 규카츠 버거가 슬픈 기분을 달래고 사랑스런 분위기를 만듭니다."
+      },
+      {
+        "name": "사천 해물면",
+        "cuisine": "중식",
+        "meal_type": "식사",
+        "suitable_mood": ["분노", "즐거움"],
+        "suitable_weather": ["비", "흐림"],
+        "suitable_company": ["혼자", "친구"],
+        "reason": "사천 스타일이 화끈한 분노 해소와 즐거운 자리를 돕습니다."
+      },
+      {
+        "name": "병아리콩 샐러드",
+        "cuisine": "양식",
+        "meal_type": "식사",
+        "suitable_mood": ["아픔", "피곤"],
+        "suitable_weather": ["맑음", "흐림"],
+        "suitable_company": ["혼자", "가족"],
+        "reason": "단백질 가득 병아리콩이 아픔과 피로를 덜어줍니다."
+      },
+      {
+        "name": "랜덤 시나몬롤 치즈케이크",
+        "cuisine": "랜덤",
+        "meal_type": "디저트",
+        "suitable_mood": ["기쁨", "불안"],
+        "suitable_weather": ["맑음", "흐림"],
+        "suitable_company": ["혼자", "데이트"],
+        "reason": "시나몬 향과 치즈의 달콤함이 기쁨을 더하고 불안을 잠재웁니다."
+      },
+      {
+        "name": "호떡 아이스크림 샌드",
+        "cuisine": "한식",
+        "meal_type": "디저트",
+        "suitable_mood": ["슬픔", "즐거움"],
+        "suitable_weather": ["비", "흐림"],
+        "suitable_company": ["가족", "친구"],
+        "reason": "따뜻한 호떡에 차가운 아이스크림이 슬픔을 달래고 즐거움을 줍니다."
+      },
+      {
+        "name": "녹차 모찌 아이스크림",
+        "cuisine": "일식",
+        "meal_type": "디저트",
+        "suitable_mood": ["우울", "사랑"],
+        "suitable_weather": ["눈", "흐림"],
+        "suitable_company": ["혼자", "데이트"],
+        "reason": "쫄깃한 모찌와 녹차 아이스크림이 우울함을 씻고 사랑을 느끼게 합니다."
+      }
+  ]
+  

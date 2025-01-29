@@ -1,0 +1,133 @@
+/* 폰트 설정 */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #ff6f61;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+    color: #555;
+    font-weight: 600;
+    text-align: center; /* 이미 가운데 정렬됨 */
+    font-size: 1.1em;
+}
+
+#weather, #mood, #company, #meal_type, #cuisine {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.option-button {
+    padding: 12px 25px;
+    background-color: #ffe0b2;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    font-size: 1em;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.option-button:hover {
+    background-color: #ffcc80;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+.option-button.active {
+    background-color: #ff6f61;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #ff6f61;
+    color: #fff;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.submit-button:hover {
+    background: #e55b50;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #ff6f61;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #e55b50;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .option-button {
+        flex: 1 1 45%;
+        font-size: 0.9em;
+    }
+
+    .submit-button {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>음식 추천 결과</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>음식 추천 결과</h1>
+        <p><strong>기분:</strong> {{ mood }}</p>
+        <p><strong>날씨:</strong> {{ weather }}</p>
+        <p><strong>함께하는 사람:</strong> {{ company }}</p>
+        <p><strong>식사 유형:</strong> {{ meal_type }}</p>
+        <p><strong>음식 종류:</strong> {{ cuisine }}</p>
+
+        {% if recommendation is string %}
+            <h2>추천 음식: {{ recommendation }}</h2>
+            <p>{{ reason }}</p>
+        {% elif recommendation is list %}
+            <h2>{{ reason }}</h2>
+            <ul>
+                {% for food in recommendation %}
+                    <li>{{ food }}</li>
+                {% endfor %}
+            </ul>
+            <p>위 음식들 중 하나를 선택해보세요!</p>
+        {% endif %}
+
+        <a href="/">다시 추천 받기</a>
+    </div>
+</body>
+</html>
